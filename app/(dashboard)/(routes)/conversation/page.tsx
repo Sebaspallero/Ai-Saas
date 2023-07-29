@@ -18,12 +18,14 @@ import Empty from "@/components/Empty"
 import Loader from "@/components/Loader"
 import UserAvatar from "@/components/UserAvatar"
 import BotAvatar from "@/components/BotAvatar"
+import { useProModal } from "@/hooks/UseProModal"
 import { cn } from "@/lib/utils"
 
 const ConversationPage = () => {
 
     const router = useRouter()
     const[messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
+    const proModal = useProModal()
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -51,8 +53,9 @@ const ConversationPage = () => {
             form.reset()
        }
        catch(error: any){
-            console.log(error)
-            //OPEN PRO MODAL
+            if(error?.response?.status === 403){
+                proModal.onOpen()
+            }
        }
        finally{
             router.refresh()
@@ -98,7 +101,7 @@ const ConversationPage = () => {
                 )}
                 <div className="flex flex-col-reverse gap-y-4">
                     {messages.map((message) => (
-                        <div key={message.content} className={cn("p-8 w-full flex items-center gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
+                        <div key={message.content} className={cn("p-4 w-full flex items-center gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
                             {message.role === "user" ? <UserAvatar/> : <BotAvatar/>}
                             <p className="text-sm">{message.content}</p>
                         </div>

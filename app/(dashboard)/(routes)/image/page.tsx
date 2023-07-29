@@ -16,7 +16,7 @@ import { useState } from "react"
 import Empty from "@/components/Empty"
 import Image from "next/image"
 import Loader from "@/components/Loader"
-import { cn } from "@/lib/utils"
+import { useProModal } from "@/hooks/UseProModal"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardFooter } from "@/components/ui/card"
 
@@ -26,6 +26,7 @@ const ImagePage = () => {
     const router = useRouter()
     const [images, setImages] = useState<string[]>([])
     const [prompt, setPrompt] = useState<null | string>("")
+    const proModal = useProModal()
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -50,8 +51,9 @@ const ImagePage = () => {
             form.reset()
        }
        catch(error: any){
-            console.log(error)
-            //OPEN PRO MODAL
+        if(error?.response?.status === 403){
+            proModal.onOpen()
+        }
        }
        finally{
             router.refresh()
