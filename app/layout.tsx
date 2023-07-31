@@ -11,7 +11,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Eureka',
+  title: 'retibo.ai',
   description: 'AI Platform',
   icons:{
     icon: '/icon.png'

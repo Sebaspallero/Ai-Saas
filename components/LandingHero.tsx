@@ -4,6 +4,8 @@ import { useAuth } from "@clerk/nextjs"
 import Link from "next/link"
 import TypewriterComponent from 'typewriter-effect'
 import { Button } from "./ui/button"
+import { Zap } from "lucide-react"
+import Image from "next/image"
 
 export const LandingHero = () => {
     const {isSignedIn} = useAuth()
@@ -14,7 +16,7 @@ export const LandingHero = () => {
                 <h1>
                     The Best AI Tool for
                 </h1>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700">
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FEC836] via-[#B193FC] to-[#00E9B0]">
                     <TypewriterComponent
                         options={{
                             strings:[
@@ -32,13 +34,14 @@ export const LandingHero = () => {
             </p>
             <div>
                 <Link href={isSignedIn ? "/dashboard" : "sign-up"}>
-                    <Button variant='premium' className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
+                    <Button variant='premium' className="rounded-full">
                         Start Generating For Free
+                        <Zap className="fill-[#FEC836] text-[#FEC836] ml-1"/>
                     </Button>
                 </Link>
             </div>
             <p className="text-zinc-400 text-sm md:text-sm font-normal">
-                No credit card required.
+                No credit card required. 
             </p>
         </div>
     )
