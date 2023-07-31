@@ -12,9 +12,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'retibo.ai',
-  description: 'AI Platform',
+  description: 'La Inteligencia Artificial optimizada para la Argentina.',
   icons:{
-    icon: '/icon.png'
+    icon: '/logo-retibo.svg'
   }
 }
 

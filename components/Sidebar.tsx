@@ -11,11 +11,12 @@ import {
   LayoutDashboard,
   MessageSquare,
   ImageIcon,
-  VideoIcon,
-  Music,
+  Languages,
   Code,
   Settings,
+  Sparkle,
 } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] });
 
@@ -39,15 +40,15 @@ const routes = [
     color: "text-pink-500",
   },
   {
-    label: "Video Generation",
-    icon: VideoIcon,
-    href: "/video",
-    color: "text-orange-500",
+    label: "Translation",
+    icon: Languages,
+    href: "/translation",
+    color: "text-[#FEC836]",
   },
   {
-    label: "Music Generation",
-    icon: Music,
-    href: "/music",
+    label: "Social Media Generation",
+    icon: Sparkle,
+    href: "/social-media",
     color: "text-emerald-500",
   },
   {
@@ -72,12 +73,22 @@ const Sidebar = ({apiLimitCount = 0}: SidebarProps) => {
     <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
       <div className="px-3 py-2 flex-1">
         <Link href="/dashboard" className="flex items-center pl-3 mb-14">
-          <div className="relative w-8 h-8 mr-4">
-            <Image fill alt="Logo" src="/logo.png" />
+          <div className="relative h-12 w-12 mr-4">
+              <Image
+                fill
+                alt="logo"
+                src='/logo-retibo.svg'/>
           </div>
-          <h1 className={cn("text-2xl font-bold", montserrat.className)}>
-            Eureka
-          </h1>
+          <div className="relative mr-2">
+                <Image
+                  height={70}
+                  width={120}
+                  alt="logo"
+                  src='/name-logo.svg'/>
+          </div>
+          <Badge className="text-xs py-1 text-white mb-6 mr-4" variant='outline'>
+              Beta
+          </Badge>
         </Link>
         <div className="space-y-1">
           {routes.map((route) => (

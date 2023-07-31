@@ -11,10 +11,12 @@ import {
     Code,
     Check,
     Zap,
+    Sparkles,
   } from "lucide-react";
 import { Card } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const tools = [
     {
@@ -24,29 +26,17 @@ const tools = [
       bgColor: 'bg-violet-500/10',
     },
     {
-      label: 'Music Generation',
-      icon: Music,
-      color: 'text-emerald-500',
-      bgColor: 'bg-emerald-500/10', 
-    },
-    {
       label: 'Image Generation',
       icon: ImageIcon,
       color: 'text-pink-700',
       bgColor: 'bg-pink-700/10',
     },
     {
-      label: 'Video Generation',
-      icon: VideoIcon,
-      color: 'text-orange-700',
-      bgColor: 'bg-orange-700/10',
-    },
-    {
       label: 'Code Generation',
       icon: Code,
       color: 'text-green-700',
       bgColor: 'bg-green-700/10',
-    },
+    }
   ]
 
 const ProModal = () => {
@@ -56,11 +46,18 @@ const ProModal = () => {
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClose}>
         <DialogContent>
             <DialogHeader>
-                <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
-                    <div className="flex items-center gap-x-2 font-bold py-1">
-                        Upgrade to Eureka
-                    <Badge className="text-sm py-1" variant='premium'>
-                        PRO
+                <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-4">
+                    <div className="flex items-end gap-x-2 font-bold py-1">
+                        Thanks for testing
+                        <div className="relative mr-2">
+                          <Image
+                            height={70}
+                            width={120}
+                            alt="logo"
+                            src='/name-logo-dk.svg'/>
+                        </div>
+                    <Badge className="text-xs py-1 text-accent-foreground mb-4 -ml-2" variant='outline'>
+                        Beta
                     </Badge>  
                     </div>
                 </DialogTitle>
@@ -78,13 +75,20 @@ const ProModal = () => {
                             <Check className="text-primary w-5 h-5"/>
                         </Card>
                     ))}
-                </DialogDescription> 
+                </DialogDescription>
+                <div className="flex items-center justify-center gap-1 py-2">
+                  <Sparkles className="fill-yellow-400 text-yellow-400"/> <p className="text-center text-lg font-bold">More features coming soon</p> <Sparkles className="fill-yellow-400 text-yellow-400"/>
+                </div>
+                  <p className="text-left text-sm">This was a beta version of an upcoming project made with OpenAI, Next.js, Prisma and Tailwind.</p>
+                  <p className="text-left text-sm">If you want to collaborate in this project you can write an email to <span className="bg-gray-300 py-[2px] px-[6px] rounded-md">sebastianpallerodev@gmail.com</span> (we are looking for someone to integrate payment suscriptions), or you can donate to the project with the link below.</p>
             </DialogHeader>
             <DialogFooter>
+              <a href="http://mpago.la/28oRYJ2" target="_blank" rel="noreferrer" className="w-full">
                 <Button variant='premium' size='lg' className="w-full">
-                    Upagrade
-                    <Zap className="w-4 h-4 fill-white ml-2"/>
+                      Donate
+                      <Zap className="w-4 h-4 fill-white ml-2"/>
                 </Button>
+              </a>
             </DialogFooter>
         </DialogContent>
     </Dialog>

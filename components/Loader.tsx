@@ -3,17 +3,17 @@ import Image from "next/image"
 
 const Loader = () => {
   return (
-    <div className="h-full flex flex-col gap-y-4  items-center justify-center">
-        <div className="w-10 h-10 relative animate-spin">
-            <Image
-                alt="Logo"
-                fill
-                src="/logo.png"/>
-        </div>
-        <p className="text-sm  text-muted-foreground">
-            Creating your Eureka moment!
-        </p>
-    </div>
+    <div className="h-full py-8 flex flex-col gap-y-4  items-center justify-center bg-muted">
+      <div className="w-12 h-12 relative animate-bounce">
+        <Image
+            alt="Logo"
+            fill
+            src="/logo-retibo.svg"/>
+      </div>
+    <p className="text-sm  text-muted-foreground">
+        retibo.ai is creating your answer!
+    </p>
+  </div>
   )
 }
 

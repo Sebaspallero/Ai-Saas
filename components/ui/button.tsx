@@ -18,9 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        white:"bg-white text-accent-foreground border-0 hover:bg-accent",
         premium: "bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 text-white border-0",
-        test:"bg-gradient-to-r from-[#FEC836] via-[#B193FC] to-[#00E9B0] text-white border-0",
-        gradient: 'z-10 border-none outline-none relative rounded-[30px] bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 cursor-pointer before:absolute before:-z-10 before:top-px before:right-px before:bottom-px before:left-px before:bg-[#111827] before:rounded-[32px]'
+        gradient: 'bg-gradient-to-r from-[#8595e3] via-[#4e1e8c] to-[#2c0635] border-0 text-white'
       },
       size: {
         default: "h-10 px-4 py-2",

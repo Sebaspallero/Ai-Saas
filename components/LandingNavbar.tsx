@@ -1,27 +1,20 @@
 "use client"
 
-import { Montserrat } from "next/font/google"
-
 import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 
 import { useAuth } from "@clerk/nextjs"
-import { cn } from "@/lib/utils"
 import { Badge } from "./ui/badge"
 
-const font = Montserrat({
-    weight: "600",
-    subsets:['latin']
-})
 
 export const LandingNavbar = () => {
 
     const {isSignedIn} = useAuth()
 
     return(
-        <nav className="p-4 md:px-12 bg-transparent flex items-center justify-between">
+        <nav className="p-4 md:px-12 flex items-center justify-between">
             <Link href='/' className="flex items-center">
                 <div className="relative h-12 w-12 mr-4">
                     <Image

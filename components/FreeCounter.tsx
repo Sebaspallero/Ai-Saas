@@ -28,7 +28,7 @@ const FreeCounter = ({apiLimitCount = 0}: FreeCounterProps) => {
   return (
     <div className="px-3">
         <Card className="bg-white/10 border-0">
-            <CardContent className="py-6">
+            <CardContent className="py-4">
                 <div className="text-center text-sm text-white mb-4 space-y-2">
                     <p>{apiLimitCount} / {MAX_FREE_COUNTS} Free Generations</p>
                     <Progress
