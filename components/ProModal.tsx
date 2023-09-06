@@ -83,7 +83,7 @@ const ProModal = () => {
                   <p className="text-left text-sm">If you want to collaborate in this project you can write an email to <span className="bg-gray-300 py-[2px] px-[6px] rounded-md">sebastianpallerodev@gmail.com</span> (we are looking for someone to integrate payment suscriptions), or you can donate to the project with the link below.</p>
             </DialogHeader>
             <DialogFooter>
-              <a href="http://mpago.la/28oRYJ2" target="_blank" rel="noreferrer" className="w-full">
+              <a href="https://cafecito.app/sebastianpallero" target="_blank" rel="noreferrer" className="w-full">
                 <Button variant='premium' size='lg' className="w-full">
                       Donate
                       <Zap className="w-4 h-4 fill-white ml-2"/>

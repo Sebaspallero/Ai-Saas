@@ -56,8 +56,12 @@ const ConversationPage = () => {
        catch(error: any){
             if(error?.response?.status === 403){
                 proModal.onOpen()
-            } else{
-                toast.error('Something went wrong.')
+            }
+            if(error?.response?.status === 503){
+                toast.error('Response time expired, please try again.')
+            } 
+            else{
+                toast.error('Something went wrong, please try again.')
             }
        }
        finally{

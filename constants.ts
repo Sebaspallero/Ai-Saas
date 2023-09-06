@@ -1,2 +1,2 @@
-export const MAX_FREE_COUNTS = 4;
+export const MAX_FREE_COUNTS = 5;
 

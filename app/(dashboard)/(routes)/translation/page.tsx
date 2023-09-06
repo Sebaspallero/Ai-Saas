@@ -85,7 +85,7 @@ const TranslationPage = () => {
                                     <Input 
                                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                                         disabled={loading}
-                                        placeholder="Translate the following sentence into spanish: El perro comia una manzana roja"
+                                        placeholder="Translate the following sentence into english: El perro comia una manzana roja"
                                         {...field}/>
                                 </FormItem>
                             </FormItem>
